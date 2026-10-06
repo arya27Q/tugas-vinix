@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengaturan Profil Toko - PlusFood Kantin</title>
+</head>
+<body>
+
+    <!-- Header / Navigasi Utama -->
+    <header>
+        <p>
+            <img src="./assets/images/logo-plusfood.svg" alt="Logo PlusFood" width="32" height="32">
+            <strong>PlusFood</strong><br>
+            <small>Kantin</small>
+        </p>
+
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="kelola-surplus.html">Kelola Surplus</a></li>
+                <li><a href="transaksi.html">Transaksi</a></li>
+                <li><a href="profil-toko.html"><strong>Profil Toko</strong></a></li>
+            </ul>
+        </nav>
+
+        <aside>
+            <p>
+                <a href="notifikasi.html">Notifikasi <span>(2 baru)</span></a>
+            </p>
+            <p>
+                <img src="./assets/images/avatar-mas-danu.webp" alt="Foto Profil Mas Danu" width="40" height="40">
+                <strong>Mas Danu</strong><br>
+                <small>Pemilik</small>
+            </p>
+        </aside>
+    </header>
+
+    <!-- Konten Utama Pengaturan Profil Toko -->
+    <main>
+        <h1>Pengaturan Profil Toko</h1>
+
+        <!-- Header Kartu Informasi Toko Ringkas -->
+        <section>
+            <h2>Kartu Toko</h2>
+            <figure>
+                <img src="./assets/images/logo-kantin-srikandi.svg" alt="Logo Kantin Srikandi" width="64" height="64">
+            </figure>
+            <p>
+                <strong>Kantin Srikandi</strong><br>
+                <small>RSUD Dr. Soetomo, Surabaya</small>
+            </p>
+            <p>
+                <a href="ganti-logo.html">Ganti Logo</a>
+            </p>
+        </section>
+
+        <!-- Formulir Pengaturan Profil Toko -->
+        <form action="#" method="post">
+
+            <!-- Seksi 1: Informasi Toko -->
+            <section>
+                <fieldset>
+                    <legend>Informasi Toko</legend>
+
+                    <p>
+                        <label for="nama-toko">Nama Toko</label><br>
+                        <input type="text" id="nama-toko" name="nama_toko" value="Kantin Srikandi" required>
+                    </p>
+
+                    <p>
+                        <label for="nama-pemilik">Nama Pemilik</label><br>
+                        <input type="text" id="nama-pemilik" name="nama_pemilik" value="Danu Prasetyo" required>
+                    </p>
+
+                    <p>
+                        <label for="lokasi-toko">Lokasi</label><br>
+                        <input type="text" id="lokasi-toko" name="lokasi" value="RSUD Dr. Soetomo" required>
+                    </p>
+
+                    <p>
+                        <label for="alamat-lengkap">Alamat Lengkap</label><br>
+                        <textarea id="alamat-lengkap" name="alamat_lengkap" rows="3" required>Jl. Mayjen Prof. Dr. Moestopo No. 6-8, Airlangga, Gubeng, Surabaya</textarea>
+                    </p>
+
+                    <p>
+                        <label for="no-whatsapp">No. WhatsApp</label><br>
+                        <input type="tel" id="no-whatsapp" name="no_whatsapp" value="0813 3122 4580" required>
+                    </p>
+
+                    <p>
+                        <label for="email-toko">Email</label><br>
+                        <input type="email" id="email-toko" name="email_toko" value="kantin.srikandi@gmail.com" required>
+                    </p>
+                </fieldset>
+            </section>
+
+            <!-- Seksi 2: Jam Operasional Surplus -->
+            <section>
+                <fieldset>
+                    <legend>Jam Operasional Surplus</legend>
+
+                    <p>
+                        <label for="mulai-pickup">Mulai Pickup</label><br>
+                        <input type="time" id="mulai-pickup" name="mulai_pickup" value="18:00" required>
+                    </p>
+
+                    <p>
+                        <label for="tutup-pickup">Tutup Pickup</label><br>
+                        <input type="time" id="tutup-pickup" name="tutup_pickup" value="21:00" required>
+                    </p>
+
+                    <fieldset>
+                        <legend>Hari Operasional</legend>
+                        <p>
+                            <label><input type="checkbox" name="hari_operasional" value="senin" checked> Sen</label>
+                            <label><input type="checkbox" name="hari_operasional" value="selasa" checked> Sel</label>
+                            <label><input type="checkbox" name="hari_operasional" value="rabu" checked> Rab</label>
+                            <label><input type="checkbox" name="hari_operasional" value="kamis" checked> Kam</label>
+                            <label><input type="checkbox" name="hari_operasional" value="jumat" checked> Jum</label>
+                            <label><input type="checkbox" name="hari_operasional" value="sabtu" checked> Sab</label>
+                            <label><input type="checkbox" name="hari_operasional" value="minggu"> Min</label>
+                        </p>
+                    </fieldset>
+                </fieldset>
+            </section>
+
+            <!-- Seksi 3: Pencairan Dana -->
+            <section>
+                <fieldset>
+                    <legend>Pencairan Dana</legend>
+
+                    <p>
+                        <label for="pilihan-bank">Bank</label><br>
+                        <select id="pilihan-bank" name="bank" required>
+                            <option value="BRI" selected>BRI</option>
+                            <option value="BCA">BCA</option>
+                            <option value="Mandiri">Mandiri</option>
+                            <option value="BNI">BNI</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="no-rekening">No. Rekening</label><br>
+                        <input type="text" id="no-rekening" name="no_rekening" value="0062 0110 4458 509" required>
+                    </p>
+
+                    <p>
+                        <label for="atas-nama">Atas Nama</label><br>
+                        <input type="text" id="atas-nama" name="atas_nama" value="Danu Prasetyo" required>
+                    </p>
+                </fieldset>
+            </section>
+
+            <!-- Seksi Aksi Formulir -->
+            <section>
+                <h2>Aksi</h2>
+                <p>
+                    <a href="profil-toko.html">Batal</a>
+                    <button type="submit">Simpan Perubahan</button>
+                </p>
+            </section>
+
+        </form>
+    </main>
+
+    <!-- Footer Halaman -->
+    <footer>
+        <p><small>&copy; 2026 PlusFood. Seluruh hak cipta dilindungi.</small></p>
+    </footer>
+
+</body>
+</html>

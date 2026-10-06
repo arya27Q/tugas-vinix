@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kelola Surplus - PlusFood Kantin</title>
+</head>
+<body>
+
+    <!-- Header / Navigasi Utama -->
+    <header>
+        <p>
+            <img src="./assets/images/logo-plusfood.svg" alt="Logo PlusFood" width="32" height="32">
+            <strong>PlusFood</strong><br>
+            <small>Kantin</small>
+        </p>
+
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="kelola-surplus.html"><strong>Kelola Surplus</strong></a></li>
+                <li><a href="transaksi.html">Transaksi</a></li>
+                <li><a href="profil-toko.html">Profil Toko</a></li>
+            </ul>
+        </nav>
+
+        <aside>
+            <p>
+                <a href="notifikasi.html">Notifikasi <span>(2 baru)</span></a>
+            </p>
+            <p>
+                <img src="./assets/images/avatar-mas-danu.webp" alt="Foto Profil Mas Danu" width="40" height="40">
+                <strong>Mas Danu</strong><br>
+                <small>Pemilik</small>
+            </p>
+        </aside>
+    </header>
+
+    <!-- Konten Utama Kelola Surplus -->
+    <main>
+        <!-- Section Header Halaman & Pencarian -->
+        <section>
+            <header>
+                <h1>Kelola Surplus</h1>
+                <p>Daftar listing aktif malam ini</p>
+            </header>
+
+            <form action="#" method="get">
+                <p>
+                    <label for="search-listing">Cari listing...</label>
+                    <input type="search" id="search-listing" name="q" placeholder="Cari listing...">
+                    <button type="submit">Cari</button>
+                </p>
+            </form>
+
+            <p>
+                <a href="tambah-makanan.html">+ Tambah Makanan</a>
+            </p>
+        </section>
+
+        <!-- Tabel Daftar Makanan Surplus -->
+        <section>
+            <h2>Daftar Makanan Surplus Malam Ini</h2>
+            <table>
+                <caption>Daftar Makanan Surplus Aktif, Stok, Kategori, dan Status Terjual</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Makanan</th>
+                        <th scope="col">Kategori</th>
+                        <th scope="col">Harga Asli</th>
+                        <th scope="col">Harga Surplus</th>
+                        <th scope="col">Stok</th>
+                        <th scope="col">Terjual</th>
+                        <th scope="col">Batas Ambil</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Aksi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <img src="./assets/images/menu-mlempem-proof.webp" alt="" width="40" height="40">
+                            <strong>Paket Camilan Mlempem-Proof</strong>
+                        </td>
+                        <td>Camilan Kering</td>
+                        <td><del>Rp 12.000</del></td>
+                        <td><strong>Rp 5.000</strong></td>
+                        <td>8</td>
+                        <td>4</td>
+                        <td><time datetime="21:00">21.00</time></td>
+                        <td><span>Aktif</span></td>
+                        <td>
+                            <a href="edit-makanan.html?id=1" aria-label="Edit Paket Camilan Mlempem-Proof">Edit</a>
+                            <a href="hapus-makanan.html?id=1" aria-label="Hapus Paket Camilan Mlempem-Proof">Hapus</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="./assets/images/menu-ayam-geprek.webp" alt="" width="40" height="40">
+                            <strong>Nasi Ayam Geprek</strong>
+                        </td>
+                        <td>Nasi</td>
+                        <td><del>Rp 18.000</del></td>
+                        <td><strong>Rp 10.000</strong></td>
+                        <td>3</td>
+                        <td>7</td>
+                        <td><time datetime="20:00">20.00</time></td>
+                        <td><span>Aktif</span></td>
+                        <td>
+                            <a href="edit-makanan.html?id=2" aria-label="Edit Nasi Ayam Geprek">Edit</a>
+                            <a href="hapus-makanan.html?id=2" aria-label="Hapus Nasi Ayam Geprek">Hapus</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="./assets/images/menu-soto-ayam.webp" alt="" width="40" height="40">
+                            <strong>Soto Ayam + Nasi</strong>
+                        </td>
+                        <td>Kuah</td>
+                        <td><del>Rp 16.000</del></td>
+                        <td><strong>Rp 9.000</strong></td>
+                        <td>2</td>
+                        <td>6</td>
+                        <td><time datetime="20:30">20.30</time></td>
+                        <td><span>Hampir Habis</span></td>
+                        <td>
+                            <a href="edit-makanan.html?id=3" aria-label="Edit Soto Ayam + Nasi">Edit</a>
+                            <a href="hapus-makanan.html?id=3" aria-label="Hapus Soto Ayam + Nasi">Hapus</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="./assets/images/menu-gorengan.webp" alt="" width="40" height="40">
+                            <strong>Gorengan Campur 10pc</strong>
+                        </td>
+                        <td>Camilan</td>
+                        <td><del>Rp 15.000</del></td>
+                        <td><strong>Rp 7.000</strong></td>
+                        <td>6</td>
+                        <td>2</td>
+                        <td><time datetime="21:30">21.30</time></td>
+                        <td><span>Aktif</span></td>
+                        <td>
+                            <a href="edit-makanan.html?id=4" aria-label="Edit Gorengan Campur 10pc">Edit</a>
+                            <a href="hapus-makanan.html?id=4" aria-label="Hapus Gorengan Campur 10pc">Hapus</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="./assets/images/menu-roti-cokelat.webp" alt="" width="40" height="40">
+                            <strong>Roti Manis Isi Cokelat</strong>
+                        </td>
+                        <td>Roti</td>
+                        <td><del>Rp 20.000</del></td>
+                        <td><strong>Rp 8.000</strong></td>
+                        <td>0</td>
+                        <td>10</td>
+                        <td><time datetime="19:00">19.00</time></td>
+                        <td><span>Habis</span></td>
+                        <td>
+                            <a href="edit-makanan.html?id=5" aria-label="Edit Roti Manis Isi Cokelat">Edit</a>
+                            <a href="hapus-makanan.html?id=5" aria-label="Hapus Roti Manis Isi Cokelat">Hapus</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Ringkasan Sesi & Aksi Massal -->
+        <section>
+            <h2>Ringkasan Sesi Malam Ini</h2>
+            <p>
+                Total <strong>4 menu aktif</strong> malam ini &bull; 
+                <strong>7 porsi</strong> siap diselamatkan &bull; 
+                Estimasi potensi omzet tersisa: <strong>Rp 44.500</strong>
+            </p>
+            <p>
+                <button type="button" disabled>Tandai Selesai Semua Sesi</button>
+                <a href="rekap-kasir.html">Cetak Rekap Kasir</a>
+            </p>
+        </section>
+
+        <!-- Kartu Indikator Kinerja / KPI -->
+        <section>
+            <h2>Indikator Kinerja Utama</h2>
+            <ul>
+                <li>
+                    <img src="./assets/images/icon-recycle.svg" alt="" width="24" height="24">
+                    <h3>Porsi Terselamatkan Hari Ini</h3>
+                    <p><strong>16</strong> porsi / 23 target</p>
+                </li>
+                <li>
+                    <img src="./assets/images/icon-piggy.svg" alt="" width="24" height="24">
+                    <h3>Omzet Rescue Tambahan</h3>
+                    <p><strong>Rp 128.500</strong></p>
+                </li>
+                <li>
+                    <img src="./assets/images/icon-speedometer.svg" alt="" width="24" height="24">
+                    <h3>Rata-rata Waktu Terjual</h3>
+                    <p><strong>18</strong> menit / item</p>
+                </li>
+                <li>
+                    <img src="./assets/images/icon-leaf.svg" alt="" width="24" height="24">
+                    <h3>Jejak Karbon Dicegah</h3>
+                    <p><strong>4,2</strong> kg CO&thinsp;&thinsp;e</p>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Tips Operasional -->
+        <section>
+            <h2>Tips Operasional</h2>
+            <article>
+                <p>
+                    <img src="./assets/images/icon-bulb.svg" alt="" width="20" height="20">
+                    <strong>Tips Kasir Kantin Srikandi:</strong> Diskon 50% di atas pukul 19.30 WIB mempercepat habisnya stok makanan basah hingga 3x lebih cepat oleh mahasiswa asrama Lidah Wetan.
+                </p>
+                <p><a href="pengaturan-diskon.html">Atur Diskon Otomatis &rarr;</a></p>
+            </article>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p><small>&copy; 2026 PlusFood. Seluruh hak cipta dilindungi.</small></p>
+    </footer>
+
+</body>
+</html>

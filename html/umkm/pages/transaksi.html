@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riwayat Transaksi - PlusFood Kantin</title>
+</head>
+<body>
+
+    <!-- Header / Navigasi Utama -->
+    <header>
+        <p>
+            <img src="./assets/images/logo-plusfood.svg" alt="Logo PlusFood" width="32" height="32">
+            <strong>PlusFood</strong><br>
+            <small>Kantin</small>
+        </p>
+
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="kelola-surplus.html">Kelola Surplus</a></li>
+                <li><a href="transaksi.html"><strong>Transaksi</strong></a></li>
+                <li><a href="profil-toko.html">Profil Toko</a></li>
+            </ul>
+        </nav>
+
+        <aside>
+            <p>
+                <a href="notifikasi.html">Notifikasi <span>(2 baru)</span></a>
+            </p>
+            <p>
+                <img src="./assets/images/avatar-mas-danu.webp" alt="Foto Profil Mas Danu" width="40" height="40">
+                <strong>Mas Danu</strong><br>
+                <small>Pemilik</small>
+            </p>
+        </aside>
+    </header>
+
+    <!-- Konten Utama Halaman Riwayat Transaksi -->
+    <main>
+        <!-- Seksi Header Halaman & Ekspor -->
+        <section>
+            <header>
+                <h1>Riwayat Transaksi</h1>
+                <p>
+                    Total Oktober: <strong>Rp 1.284.000</strong> dari 148 transaksi
+                </p>
+            </header>
+
+            <p>
+                <time datetime="2026-10-01/2026-10-14">1&ndash;14 Okt 2026</time>
+            </p>
+
+            <p>
+                <a href="ekspor-transaksi.csv" download>Ekspor CSV</a>
+            </p>
+        </section>
+
+        <!-- Tabel Data Riwayat Transaksi -->
+        <section>
+            <h2>Daftar Transaksi Terbaru</h2>
+            <table>
+                <caption>Daftar Rincian Transaksi Penjualan Makanan Surplus</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Waktu</th>
+                        <th scope="col">Pembeli</th>
+                        <th scope="col">Item</th>
+                        <th scope="col">Qty</th>
+                        <th scope="col">Total</th>
+                        <th scope="col">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>TRX-10482</strong></td>
+                        <td><time datetime="2026-10-14T19:40">14 Okt, 19.40</time></td>
+                        <td><strong>Raka Pratama</strong></td>
+                        <td>Paket Camilan Mlempem-Proof</td>
+                        <td>1</td>
+                        <td><strong>Rp 5.000</strong></td>
+                        <td><span>Selesai</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>TRX-10481</strong></td>
+                        <td><time datetime="2026-10-14T19:22">14 Okt, 19.22</time></td>
+                        <td><strong>Riko Saputra</strong></td>
+                        <td>Nasi Ayam Geprek</td>
+                        <td>1</td>
+                        <td><strong>Rp 10.000</strong></td>
+                        <td><span>Selesai</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>TRX-10480</strong></td>
+                        <td><time datetime="2026-10-14T19:05">14 Okt, 19.05</time></td>
+                        <td><strong>Nadia Amalia</strong></td>
+                        <td>Soto Ayam + Nasi</td>
+                        <td>2</td>
+                        <td><strong>Rp 18.000</strong></td>
+                        <td><span>Selesai</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>TRX-10479</strong></td>
+                        <td><time datetime="2026-10-14T18:51">14 Okt, 18.51</time></td>
+                        <td><strong>Fikri Hidayat</strong></td>
+                        <td>Gorengan Campur 10pc</td>
+                        <td>1</td>
+                        <td><strong>Rp 7.000</strong></td>
+                        <td><span>Selesai</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>TRX-10478</strong></td>
+                        <td><time datetime="2026-10-14T18:30">14 Okt, 18.30</time></td>
+                        <td><strong>Salsa Putri</strong></td>
+                        <td>Nasi Ayam Geprek</td>
+                        <td>1</td>
+                        <td><strong>Rp 10.000</strong></td>
+                        <td><span>Kadaluarsa</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>TRX-10477</strong></td>
+                        <td><time datetime="2026-10-13T20:12">13 Okt, 20.12</time></td>
+                        <td><strong>Bima Arya</strong></td>
+                        <td>Roti Manis Isi Cokelat</td>
+                        <td>3</td>
+                        <td><strong>Rp 24.000</strong></td>
+                        <td><span>Selesai</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>TRX-10476</strong></td>
+                        <td><time datetime="2026-10-13T19:48">13 Okt, 19.48</time></td>
+                        <td><strong>Dewi Lestari</strong></td>
+                        <td>Paket Camilan Mlempem-Proof</td>
+                        <td>2</td>
+                        <td><strong>Rp 10.000</strong></td>
+                        <td><span>Selesai</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>TRX-10475</strong></td>
+                        <td><time datetime="2026-10-13T19:10">13 Okt, 19.10</time></td>
+                        <td><strong>Galih Pratama</strong></td>
+                        <td>Soto Ayam + Nasi</td>
+                        <td>1</td>
+                        <td><strong>Rp 9.000</strong></td>
+                        <td><span>Dibatalkan</span></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Navigasi Halaman (Paginasi) Semantik -->
+            <nav aria-label="Paginasi Transaksi">
+                <p>Menampilkan 1&ndash;8 dari 148</p>
+                <ul>
+                    <li><button type="button" disabled aria-label="Halaman Sebelumnya">&lt;</button></li>
+                    <li><a href="transaksi.html?page=1" aria-current="page">1</a></li>
+                    <li><a href="transaksi.html?page=2">2</a></li>
+                    <li><a href="transaksi.html?page=3">3</a></li>
+                    <li><span>...</span></li>
+                    <li><a href="transaksi.html?page=19">19</a></li>
+                    <li><a href="transaksi.html?page=2" aria-label="Halaman Selanjutnya">&gt;</a></li>
+                </ul>
+            </nav>
+        </section>
+    </main>
+
+    <!-- Footer Halaman -->
+    <footer>
+        <p><small>&copy; 2026 PlusFood. Seluruh hak cipta dilindungi.</small></p>
+    </footer>
+
+</body>
+</html>
