@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - PlusFood</title>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="../../../assets/images/plusfood-icon.png" alt="Logo PlusFood">
+            <p>PlusFood - Food Rescue Kampus</p>
+        </a>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="katalog.html">Katalog</a></li>
+                <li><a href="riwayat_pesanan.html">Riwayat</a></li>
+                <li><a href="profil.html">Profil</a></li>
+            </ul>
+        </nav>
+
+        <form action="search_results.html" method="get">
+            <input type="search" name="q" placeholder="Cari makanan surplus..." required>
+            <button type="submit">Cari</button>
+        </form>
+
+        <a href="notifikasi.html" title="Notifikasi">🔔</a>
+        <a href="profil.html" title="Profil Raka">R</a>
+    </header>
+
+    <main>
+        <h1>Checkout</h1>
+        <nav>
+            <ol>
+                <li><strong>&check; Pesanan</strong></li>
+                <li><strong>2 Data Diri</strong></li>
+                <li>3 Pembayaran</li>
+            </ol>
+        </nav>
+
+        <aside>
+            <section>
+                <h2>Ringkasan Pesanan</h2>
+                <article>
+                    <img src="../../../assets/images/nasi-ayam-bakar.png" alt="Nasi Ayam Bakar Madu">
+                    <h3>Nasi Ayam Bakar Madu</h3>
+                    <p><small>Warung Bu Sari &middot; 1 porsi</small></p>
+                    <strong>Diskon 52%</strong>
+                </article>
+                <dl>
+                    <dt>Subtotal</dt>
+                    <dd>Rp12.000</dd>
+                    <dt>Biaya Layanan</dt>
+                    <dd>Rp1.000</dd>
+                    <dt>Wadah</dt>
+                    <dd>Gratis</dd>
+                </dl>
+                <p>Total <strong>Rp13.000</strong></p>
+            </section>
+
+            <section>
+                <h2>Metode Pembayaran</h2>
+                <ul>
+                    <li><strong>QRIS</strong> <small>Semua e-wallet</small></li>
+                    <li><strong>GoPay</strong> <small>Saldo GoPay</small></li>
+                    <li><strong>DANA</strong> <small>Saldo DANA</small></li>
+                    <li><strong>Bayar di Kasir</strong> <small>Tunai saat ambil</small></li>
+                </ul>
+            </section>
+            
+            <p><small>&clock; Ambil pukul 19.00 WIB di Jl. Ketintang No. 12 &middot; Bawa wadah sendiri</small></p>
+        </aside>
+
+        <section>
+            <h2>Langkah 2 &middot; Data Pengambil</h2>
+            <form action="payment_sukses.html" method="get">
+                <fieldset>
+                    <label for="namaLengkap">Nama Lengkap</label>
+                    <input type="text" id="namaLengkap" name="namaLengkap" value="Raka Pratama" required>
+                    
+                    <label for="alamat">Alamat</label>
+                    <input type="text" id="alamat" name="alamat">
+                    
+                    <label for="wa">No. WhatsApp</label>
+                    <input type="tel" id="wa" name="wa" value="081234567890" required>
+                    
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+                </fieldset>
+
+                <fieldset>
+                    <legend>Pengaturan Waktu Ambil</legend>
+                    <label><input type="radio" name="waktu_ambil" value="18.30"> 18.30</label>
+                    <label><input type="radio" name="waktu_ambil" value="19.00" checked> 19.00</label>
+                    <label><input type="radio" name="waktu_ambil" value="19.30"> 19.30</label>
+                    <label><input type="radio" name="waktu_ambil" value="20.00"> 20.00</label>
+                    <br>
+                    <label><input type="checkbox" name="pengingat" checked> Ingatkan 30 menit sebelumnya</label>
+                    <p><small>Tiba &plusmn; 15 mnt dari kos &middot; batas akhir <strong>20.00 WIB</strong></small></p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Pilihan Wadah</legend>
+                    <label><input type="radio" name="wadah" value="bawa_sendiri" checked> Bawa wadah sendiri (Eco - Gratis)</label><br>
+                    <label><input type="radio" name="wadah" value="kotak_kertas"> Kotak kertas (+Rp1.000)</label><br>
+                    <label><input type="radio" name="wadah" value="thinwall"> Thinwall tahan panas (+Rp2.000)</label>
+                </fieldset>
+
+                <fieldset>
+                    <label for="catatan">Catatan untuk Penjual</label>
+                    <input type="text" id="catatan" name="catatan" value="Sambal dipisah ya, Bu.">
+                    <p><small>Opsional &middot; maks. 120 karakter</small></p>
+                </fieldset>
+
+                <a href="katalog.html">&larr; Kembali</a>
+                <button type="submit">Lanjut Bayar</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Pesanan &amp; Ulasan - PlusFood</title>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="../../../assets/images/plusfood-icon.png" alt="Logo PlusFood">
+            <p>PlusFood - Food Rescue Kampus</p>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="katalog.html">Katalog</a></li>
+                <li><a href="riwayat_pesanan.html">Riwayat</a></li>
+                <li><a href="profil.html">Profil</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <nav>
+            <a href="riwayat_pesanan.html">&larr; Riwayat / Detail Pesanan</a>
+            <h1>Pesanan #SB-4X29A</h1>
+            <strong>&check; Selesai</strong>
+        </nav>
+        
+        <section>
+            <article>
+                <img src="../../../assets/images/nasi-ayam-bakar.png" alt="Nasi Ayam Bakar">
+                <h2>Nasi Ayam Bakar Bumbu Rujak</h2>
+                <p><small>Warung Bu Sari</small></p>
+                <p><small>Jl. Ketintang Baru 12, Surabaya</small></p>
+                <p><small>Diambil 23 Okt 2026 - 20.15 WIB</small></p>
+            </article>
+            
+            <aside>
+                <h3>Status Pesanan</h3>
+                <ul>
+                    <li><strong>&check; Reservasi dibuat</strong> <small>23 Okt - 18.42</small></li>
+                    <li><strong>&check; Pembayaran diterima</strong> <small>23 Okt - 18.43</small></li>
+                    <li><strong>&check; Siap diambil</strong> <small>23 Okt - 19.30</small></li>
+                    <li><strong>&check; Diambil</strong> <small>23 Okt - 20.15</small></li>
+                </ul>
+            </aside>
+            
+            <aside>
+                <h3>Rincian Pembayaran</h3>
+                <dl>
+                    <dt>Nasi Ayam Bakar &times; 1</dt>
+                    <dd>Rp12.000</dd>
+                    <dt>Biaya layanan</dt>
+                    <dd>Rp1.000</dd>
+                    <dt>Wadah sendiri</dt>
+                    <dd>Gratis</dd>
+                </dl>
+                <p>Total <strong>Rp13.000</strong></p>
+                <p><small>Dibayar via QRIS - 23 Okt, 18.43</small></p>
+            </aside>
+            
+            <p><strong>Kamu menyelamatkan 400 g makanan dan hemat Rp12.000 dari pesanan ini.</strong></p>
+        </section>
+
+        <section>
+            <h2>Beri Ulasan</h2>
+            <p><small>Bagaimana makanan dari Warung Bu Sari?</small></p>
+            <form action="ulasan_sukses.html" method="get">
+                <fieldset>
+                    <legend>Rating Bintang</legend>
+                    <!-- Simulasi rating bintang -->
+                    <label><input type="radio" name="rating" value="1"> 1</label>
+                    <label><input type="radio" name="rating" value="2"> 2</label>
+                    <label><input type="radio" name="rating" value="3"> 3</label>
+                    <label><input type="radio" name="rating" value="4"> 4</label>
+                    <label><input type="radio" name="rating" value="5" checked> 5 Bintang</label>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Yang kamu suka</legend>
+                    <label><input type="checkbox" name="suka" value="hangat" checked> Masih hangat</label>
+                    <label><input type="checkbox" name="suka" value="porsi"> Porsi pas</label>
+                    <label><input type="checkbox" name="suka" value="ramah" checked> Penjual ramah</label>
+                    <label><input type="checkbox" name="suka" value="rapi"> Kemasan rapi</label>
+                    <label><input type="checkbox" name="suka" value="foto"> Sesuai foto</label>
+                </fieldset>
+                
+                <fieldset>
+                    <label for="pengalaman">Ceritakan pengalamanmu</label>
+                    <textarea id="pengalaman" name="pengalaman">Ayamnya masih hangat dan bumbunya meresap. Bu Sari ramah banget, makasih!</textarea>
+                </fieldset>
+                
+                <fieldset>
+                    <button type="button">Tambah foto (opsional)</button>
+                </fieldset>
+                
+                <button type="submit">Kirim Ulasan</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

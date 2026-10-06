@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Surplus - PlusFood</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+            <img src="../../../assets/images/plusfood-icon.png" alt="Logo PlusFood">
+            <p>PlusFood - Food Rescue Kampus</p>
+        </a>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="katalog.html"><strong>Katalog</strong></a></li>
+                <li><a href="riwayat_pesanan.html">Riwayat</a></li>
+                <li><a href="profil.html">Profil</a></li>
+            </ul>
+        </nav>
+
+        <form action="search_results.html" method="get">
+            <input type="search" name="q" placeholder="Cari makanan surplus..." required>
+            <button type="submit">Cari</button>
+        </form>
+
+        <a href="notifikasi.html" title="Notifikasi">🔔</a>
+        <a href="profil.html" title="Profil Raka">R</a>
+    </header>
+
+    <main>
+        <aside>
+            <header>
+                <h2>Filter</h2>
+                <a href="katalog.html">Reset</a>
+            </header>
+
+            <form action="katalog.html" method="get">
+                <fieldset>
+                    <legend>Rentang Harga</legend>
+                    <input type="range" id="harga" name="harga" min="5000" max="25000" step="1000" value="15000">
+                    <p><small>Rp5.000 - Rp15.000 - Rp25.000</small></p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Kategori</legend>
+                    <label><input type="radio" name="kategori" value="nasi"> Nasi</label>
+                    <label><input type="radio" name="kategori" value="mie"> Mie</label>
+                    <label><input type="radio" name="kategori" value="soto"> Soto</label>
+                    <label><input type="radio" name="kategori" value="roti"> Roti</label>
+                    <label><input type="radio" name="kategori" value="camilan"> Camilan</label>
+                    <label><input type="radio" name="kategori" value="minuman"> Minuman</label>
+                    <label><input type="radio" name="kategori" value="semua" checked> Semua</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Jarak dari Kampus</legend>
+                    <label><input type="radio" name="lokasi" value="ketintang" checked> Ketintang</label>
+                    <label><input type="radio" name="lokasi" value="lidah_wetan"> Lidah Wetan</label>
+                    <br>
+                    <label><input type="radio" name="jarak" value="500"> 500 m</label>
+                    <label><input type="radio" name="jarak" value="1000"> 1 km</label>
+                    <label><input type="radio" name="jarak" value="2000" checked> 2 km</label>
+                    <label><input type="radio" name="jarak" value="3000"> 3 km</label>
+                    <p><small>&approx; 15-20 mnt jalan/motor dari Unesa Ketintang</small></p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Jendela Jam Ambil (Malam)</legend>
+                    <label><input type="radio" name="jam" value="1700"> 17.00-18.30</label>
+                    <label><input type="radio" name="jam" value="1830" checked> 18.30-20.00</label>
+                    <label><input type="radio" name="jam" value="2000"> 20.00-21.30</label>
+                    <label><input type="radio" name="jam" value="2130"> 21.30-23.00</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Jaminan &amp; Keamanan</legend>
+                    <label><input type="checkbox" name="jaminan" value="mitra" checked> Mitra terverifikasi BEM
+                        Unesa</label><br>
+                    <label><input type="checkbox" name="jaminan" value="dimasak" checked> Dimasak hari ini (&lt; 6
+                        jam)</label><br>
+                    <label><input type="checkbox" name="jaminan" value="rating"> Rating 4.5+</label><br>
+                    <label><input type="checkbox" name="jaminan" value="halal" checked> Halal tersertifikasi</label><br>
+                    <label><input type="checkbox" name="jaminan" value="segel"> Kemasan tersegel</label>
+                </fieldset>
+
+                <button type="submit">Terapkan &middot; 18 hasil</button>
+            </form>
+        </aside>
+
+        <section>
+            <header>
+                <h1>Katalog Surplus</h1>
+                <p>18 hasil &middot; di bawah Rp15.000 &middot; &le; 30 menit</p>
+                <button type="button">Urutkan: Terdekat</button>
+            </header>
+
+            <article>
+                <strong>Diskon 52%</strong>
+                <button type="button" title="Simpan ke favorit">&hearts;</button>
+                <img src="../../../assets/images/nasi-ayam-bakar.png" alt="Seporsi Nasi Ayam Bakar">
+                <p><small>Warung Bu Sari</small></p>
+                <h3>Nasi Ayam Bakar</h3>
+                <p><strong>Rp12.000</strong> <del>Rp25.000</del></p>
+                <p><small>2 km &middot; Sisa 3 porsi</small></p>
+            </article>
+
+            <article>
+                <strong>Diskon 54%</strong>
+                <button type="button" title="Simpan ke favorit">&hearts;</button>
+                <img src="../../../assets/images/nasi-campur-bali.png" alt="Seporsi Nasi Campur Bali">
+                <p><small>Dapur Mbak Ayu</small></p>
+                <h3>Nasi Campur Bali</h3>
+                <p><strong>Rp13.000</strong> <del>Rp28.000</del></p>
+                <p><small>1,2 km &middot; Sisa 5 porsi</small></p>
+            </article>
+
+            <article>
+                <strong>Diskon 45%</strong>
+                <button type="button" title="Simpan ke favorit">&hearts;</button>
+                <img src="../../../assets/images/soto-lamongan.png" alt="Semangkuk Soto Lamongan">
+                <p><small>Soto Cak Har</small></p>
+                <h3>Soto Ayam Lamongan</h3>
+                <p><strong>Rp11.000</strong> <del>Rp20.000</del></p>
+                <p><small>0,8 km &middot; Sisa 2 porsi</small></p>
+            </article>
+
+            <article>
+                <strong>Diskon 42%</strong>
+                <button type="button" title="Simpan ke favorit">&hearts;</button>
+                <img src="../../../assets/images/mie-goreng-jawa.png" alt="Seporsi Mie Goreng Jawa">
+                <p><small>Bakmi Pak No</small></p>
+                <h3>Mie Goreng Jawa</h3>
+                <p><strong>Rp14.000</strong> <del>Rp24.000</del></p>
+                <p><small>2,6 km &middot; Sisa 4 porsi</small></p>
+            </article>
+
+            <article>
+                <strong>Diskon 59%</strong>
+                <button type="button" title="Simpan ke favorit">&hearts;</button>
+                <img src="../../../assets/images/roti-bakar-keju.png" alt="Roti Sobek Isi 6">
+                <p><small>Roti Ketintang</small></p>
+                <h3>Roti Sobek Isi 6</h3>
+                <p><strong>Rp9.000</strong> <del>Rp22.000</del></p>
+                <p><small>1,5 km &middot; Sisa 6 porsi</small></p>
+            </article>
+
+            <article>
+                <strong>Diskon 53%</strong>
+                <button type="button" title="Simpan ke favorit">&hearts;</button>
+                <img src="../../../assets/images/gorengan.png" alt="Paket Gorengan 10pc">
+                <p><small>Gorengan Bu Tin</small></p>
+                <h3>Paket Gorengan 10pc</h3>
+                <p><strong>Rp7.000</strong> <del>Rp15.000</del></p>
+                <p><small>0,5 km &middot; Sisa 8 porsi</small></p>
+            </article>
+        </section>
+
+        <aside>
+            <form action="checkout.html" method="get">
+                <button type="submit">Checkout (2 Pesanan) - Rp25.000 &rarr;</button>
+            </form>
+        </aside>
+    </main>
+</body>
+
+</html>
