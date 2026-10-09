@@ -1,60 +1,204 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PlusFood - Portal Mitra UMKM</title>
+    <title>Buat Listing Surplus - PlusFood Mitra</title>
 </head>
+
 <body>
 
     <header>
+        <a href="dashboard.html">
+            <img src="../../../assets/images/logo_umkm.png" alt="Logo PlusFood" width="40" height="40">
+            <strong>PlusFood</strong>
+            <small>Kantin</small>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="kelola_makanan.html"><strong>Kelola Surplus</strong></a></li>
+                <li><a href="transaksi.html">Transaksi</a></li>
+                <li><a href="profil.html">Profil Toko</a></li>
+            </ul>
+        </nav>
         <p>
-            <img src="./assets/images/logo-plusfood.svg" alt="Logo PlusFood" width="40" height="40">
-            <strong>PlusFood</strong><br>
-            <small>Portal Mitra UMKM</small>
+            <a href="notifikasi.html" title="Notifikasi">Notifikasi (2)</a> &bull;
+            <a href="profil.html"><strong>Mas Danu</strong> <small>Pemilik</small></a>
         </p>
     </header>
 
     <main>
-        <article>
-            <header>
-                <p><small>Sesi surplus malam ini dibuka 17.00</small></p>
-                <h1>Sisa dapur hari ini, rezeki malam ini.</h1>
-                <p>Jual makanan surplus ke mahasiswa Unesa, kurangi limbah, dan tutup modal sebelum gerai tutup.</p>
-            </header>
+        <header>
+            <p><small>Kelola Surplus / Tambah</small></p>
+            <h1>Buat Listing Surplus</h1>
+        </header>
 
-            <section>
-                <h2>Statistik Dampak PlusFood</h2>
-                <ul>
-                    <li>
-                        <img src="./assets/images/icon-store.svg" alt="" width="24" height="24">
-                        <p><strong>86</strong><br>UMKM mitra</p>
-                    </li>
-                    <li>
-                        <img src="./assets/images/icon-leaf.svg" alt="" width="24" height="24">
-                        <p><strong>3,2 ton</strong><br>makanan diselamatkan</p>
-                    </li>
-                    <li>
-                        <img src="./assets/images/icon-users.svg" alt="" width="24" height="24">
-                        <p><strong>4.100+</strong><br>mahasiswa aktif</p>
-                    </li>
-                </ul>
-            </section>
+        <form action="#" method="post">
+            <p>
+                <button type="submit" name="action" value="draft">Simpan Draf</button>
+                <button type="submit" name="action" value="publish">Tayangkan Listing</button>
+            </p>
 
-            <section>
-                <h2>Navigasi Masuk</h2>
-                <p>
-                    <a href="#dashboard">Masuk ke Dashboard</a> 
-                    atau tekan <kbd>Enter</kbd> untuk lanjut
-                </p>
-            </section>
-        </article>
+            <article>
+                <h2>Informasi Menu</h2>
+                <fieldset>
+                    <legend>Detail Makanan</legend>
+                    <p>
+                        <label for="nama-makanan">Nama Makanan</label><br>
+                        <input type="text" id="nama-makanan" name="nama_makanan" value="Paket Camilan Mlempem-Proof"
+                            required>
+                    </p>
+                    <p>
+                        <label for="kategori">Kategori</label><br>
+                        <select id="kategori" name="kategori" required>
+                            <option value="Camilan Kering" selected>Camilan Kering</option>
+                            <option value="Nasi">Nasi</option>
+                            <option value="Minuman">Minuman</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="harga-asli">Harga Asli</label><br>
+                        <input type="number" id="harga-asli" name="harga_asli" value="12000" required>
+                    </p>
+                    <p>
+                        <label for="harga-diskon">Harga Diskon</label><br>
+                        <input type="number" id="harga-diskon" name="harga_diskon" value="5000" required>
+                    </p>
+                    <p>
+                        <label for="stok">Stok (porsi)</label><br>
+                        <input type="number" id="stok" name="stok" value="8" required>
+                    </p>
+                    <p>
+                        <label for="mulai-pickup">Mulai Pickup</label><br>
+                        <input type="time" id="mulai-pickup" name="mulai_pickup" value="18:00" required>
+                    </p>
+                    <p>
+                        <label for="batas-pickup">Batas Pickup</label><br>
+                        <input type="time" id="batas-pickup" name="batas_pickup" value="21:00" required>
+                    </p>
+                    <p>
+                        <label for="deskripsi">Deskripsi</label><br>
+                        <textarea id="deskripsi" name="deskripsi" rows="3"
+                            required>Keripik singkong, makaroni pedas & rengginang.</textarea>
+                    </p>
+                    <p>
+                        <label for="foto-produk">Foto Produk</label><br>
+                        <input type="file" id="foto-produk" name="foto_produk" accept="image/png, image/jpeg">
+                        <br><small>Seret foto produk JPG/PNG, maks. 2 MB</small>
+                    </p>
+                </fieldset>
+            </article>
 
-        <aside>
-            <figure>
-                <img src="./assets/images/hero-mitra.webp" alt="Mitra UMKM PlusFood melayani transaksi kasir" width="800" height="600">
-            </figure>
-        </aside>
+            <article>
+                <h2>Catatan Kemasan</h2>
+                <fieldset>
+                    <legend>Pilihan Kemasan</legend>
+                    <p>
+                        <input type="radio" id="kemasan-ziplock" name="kemasan" value="Ziplock" checked>
+                        <label for="kemasan-ziplock">Plastik Ziplock Food Grade</label>
+
+                        <input type="radio" id="kemasan-kertas" name="kemasan" value="Kotak Kertas">
+                        <label for="kemasan-kertas">Kotak Kertas</label>
+
+                        <input type="radio" id="kemasan-mika" name="kemasan" value="Mika Tertutup">
+                        <label for="kemasan-mika">Mika Tertutup</label>
+
+                        <input type="radio" id="kemasan-bawa-wadah" name="kemasan" value="Wajib Bawa Wadah">
+                        <label for="kemasan-bawa-wadah">Wajib Bawa Wadah</label>
+                    </p>
+                    <p>
+                        <label for="catatan-pembeli">Catatan untuk pembeli</label><br>
+                        <input type="text" id="catatan-pembeli" name="catatan_pembeli"
+                            value="Disegel kedap udara, tahan renyah 3 hari.">
+                    </p>
+                    <p>
+                        <input type="checkbox" id="label-tanggal" name="label_tanggal" checked>
+                        <label for="label-tanggal">Cantumkan label tanggal produksi</label>
+                    </p>
+                </fieldset>
+            </article>
+
+            <article>
+                <h2>Kalkulator Penyelamatan Modal</h2>
+                <section>
+                    <p>
+                        <label for="modal-per-porsi">Modal per porsi</label><br>
+                        <input type="number" id="modal-per-porsi" name="modal_per_porsi" value="3500">
+                    </p>
+                    <ul>
+                        <li>Total modal (8 porsi): <strong>Rp 28.000</strong></li>
+                        <li>Modal kembali jika habis: <strong>Rp 40.000</strong></li>
+                        <li>Selisih: <strong>+Rp 12.000</strong></li>
+                        <li>Modal terselamatkan: <strong>100%</strong></li>
+                    </ul>
+                    <p>
+                        <progress value="100" max="100">100%</progress>
+                    </p>
+                    <p>
+                        <small>Menutup 100% estimasi kerugian mingguan Rp 40.000 dari bahan sisa.</small>
+                    </p>
+                    <aside>
+                        <img src="../../../assets/images/kripik.png" alt="Paket Camilan Mlempem-Proof" width="60"
+                            height="60">
+                        <p><mark>Diskon 58%</mark></p>
+                        <h3>Paket Camilan Mlempem-Proof</h3>
+                        <p><small>Pratinjau di aplikasi mahasiswa</small></p>
+                    </aside>
+                </section>
+            </article>
+
+            <article>
+                <h2>Kebijakan Gerai</h2>
+                <fieldset>
+                    <legend>Aturan Pickup & Pembatalan</legend>
+                    <p>
+                        <input type="checkbox" id="toleransi-telat" name="kebijakan"
+                            value="Toleransi telat ambil 15 menit" checked>
+                        <label for="toleransi-telat">Toleransi telat ambil 15 menit</label><br>
+
+                        <input type="checkbox" id="batal-1jam" name="kebijakan"
+                            value="Pembatalan maks. 1 jam sebelum pickup" checked>
+                        <label for="batal-1jam">Pembatalan maks. 1 jam sebelum pickup</label><br>
+
+                        <input type="checkbox" id="maks-2porsi" name="kebijakan" value="Maks. 2 porsi per mahasiswa">
+                        <label for="maks-2porsi">Maks. 2 porsi per mahasiswa</label>
+                    </p>
+                </fieldset>
+            </article>
+
+            <article>
+                <h2>Metode Pembayaran (3 aktif)</h2>
+                <fieldset>
+                    <legend>Pilihan Pembayaran</legend>
+                    <p>
+                        <input type="checkbox" id="bayar-qris" name="pembayaran" value="QRIS" checked>
+                        <label for="bayar-qris"><strong>QRIS</strong> <br><small>Semua e-wallet</small></label><br>
+
+                        <input type="checkbox" id="bayar-gopay" name="pembayaran" value="GoPay" checked>
+                        <label for="bayar-gopay"><strong>GoPay</strong> <br><small>Saldo GoPay</small></label><br>
+
+                        <input type="checkbox" id="bayar-dana" name="pembayaran" value="DANA">
+                        <label for="bayar-dana"><strong>DANA</strong> <br><small>Saldo DANA</small></label><br>
+
+                        <input type="checkbox" id="bayar-kasir" name="pembayaran" value="Bayar di Kasir" checked>
+                        <label for="bayar-kasir"><strong>Bayar di Kasir</strong> <br><small>Tunai saat
+                                ambil</small></label>
+                    </p>
+                    <p><small>Dana non-tunai cair ke rekening gerai setiap pukul 23.59 WIB.</small></p>
+                </fieldset>
+            </article>
+
+            <p>
+                <button type="submit" formaction="kelola_makanan.html" formmethod="get" name="action"
+                    value="draft">Simpan Draf</button>
+
+                <button type="submit" formaction="kelola_makanan.html" formmethod="get" name="action"
+                    value="publish">Tayangkan Listing</button>
+            </p>
+
+        </form>
     </main>
 
     <footer>
@@ -62,4 +206,5 @@
     </footer>
 
 </body>
+
 </html>
