@@ -991,3 +991,77 @@
         </section>
     </main>
 ```
+
+## Tahap Tambahan: Perbaikan Dead Code & Validasi W3C (Final)
+
+**Konteks Perbaikan:**
+
+- **Dead Code / Alur Navigasi:** Memperbaiki alur navigasi dari `Katalog` -> `Detail Makanan` -> `Checkout` -> `Pembayaran` (`payment_sukses.html`). Mengubah aksi form (`method="POST"` menjadi `method="GET"`) agar kompatibel dengan lingkungan file statis lokal, dan menghapus elemen bottom navigation "Checkout" (dead code) pada halaman Katalog agar fokus langsung ke Detail Makanan (pembelian instan / opsi 1).
+- **Validasi W3C HTML5:** Memastikan seluruh file HTML mahasiswa lolos uji [Nu Html Checker](https://validator.w3.org/nu/).
+  - Mengganti tag `<section>` dan `<article>` yang tidak memiliki *heading* (`<h2>`-`<h6>`) menjadi `<div>` untuk menghindari peringatan 'lacks heading'.
+  - Memperbaiki hierarki level heading yang melompat (misal dari `<h1>` langsung ke `<h3>`).
+  - Memperbaiki masalah elemen bersarang (*nesting*) yang dilarang.
+
+### Penjelasan Teknis & Alasan Perbaikan (Deep Dive)
+
+1. **Kenapa Dead Code Navigasi Dihapus & Mengubah POST ke GET?**
+   - **Navigasi UX:** Pengguna menghendaki alur "Pembelian Instan" (Opsi 1) untuk mahasiswa rantau, yang mana dari Katalog harus masuk dulu ke **Detail Makanan** untuk melihat alamat, deskripsi, stok porsi, dan harga pasti. Area *aside* keranjang/checkout di bawah katalog menjadi mubazir (dead code) dan mengganggu *user journey*, sehingga dihapus total.
+   - **Method GET vs POST:** Karena lingkungan prototipe ini berjalan menggunakan file statis murni (`.html` lokal) tanpa *backend server* (seperti PHP/Node.js), penggunaan form dengan `method="POST"` akan menyebabkan peramban menghasilkan *error* "405 Method Not Allowed" atau *File Not Found*. Menggantinya menjadi `method="GET"` memungkinkan navigasi mulus antar halaman statis, seolah-olah mengirim query parameter sederhana.
+
+2. **Kenapa `<section>` dan `<article>` tanpa Heading Disalahkan oleh W3C?**
+   - Di dalam spesifikasi HTML5 Semantik, elemen *sectioning* seperti `<section>` dan `<article>` akan secara otomatis mendefinisikan "simpul baru" dalam garis besar dokumen (Document Outline).
+   - *Screen reader* (pembaca layar untuk disabilitas) dan mesin pencari (SEO) mengharapkan setiap "simpul baru" ini memiliki judul (`h2`-`h6`) agar strukturnya dapat dibaca.
+   - Jika tujuannya hanya untuk membungkus (*wrapper*) atau membagi *layout* secara visual—namun tidak memiliki konteks judul spesifik—aturan baku W3C mewajibkan kita menggunakan tag generik non-semantik yaitu `<div>`.
+
+### Contoh Perbaikan Kode (Mahasiswa)
+
+**1. Penghapusan Dead Code (Bottom Aside Checkout di Katalog)**
+
+*Sebelum:*
+```html
+    <main>
+        ...
+        <aside>
+            <p><strong>Total: Rp 0</strong></p>
+            <form action="checkout.html" method="post">
+                <button type="submit" disabled>Lanjut ke Pembayaran</button>
+            </form>
+        </aside>
+    </main>
+```
+
+*Sesudah (Dihapus karena navigasi diarahkan langsung via kartu katalog ke detail makanan):*
+```html
+    <main>
+        <section>
+            <h2>Menu Spesial Hari Ini</h2>
+            <article>
+                <a href="detail_makanan.html">
+                    <img src="../../../assets/images/nasi-ayam-bakar.png" alt="Nasi Ayam Bakar">
+                    ...
+                </a>
+            </article>
+        </section>
+        <!-- Bottom aside telah dihapus -->
+    </main>
+```
+
+**2. Perbaikan Struktur Section/Article tanpa Heading**
+
+*Sebelum:*
+```html
+        <section>
+            <form action="pembayaran.html" method="get">
+                <!-- Elemen form -->
+            </form>
+        </section>
+```
+
+*Sesudah (Diubah ke div untuk menghindari error lacks heading di W3C):*
+```html
+        <div>
+            <form action="pembayaran.html" method="get">
+                <!-- Elemen form -->
+            </form>
+        </div>
+```

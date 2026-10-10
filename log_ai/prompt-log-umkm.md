@@ -433,3 +433,105 @@
             </article>
         </dialog>
 ```
+
+## Tahap Tambahan: Perbaikan Dead Code & Validasi W3C (Final)
+
+**Konteks Perbaikan:**
+
+- **Validasi W3C HTML5:** Memastikan seluruh file HTML UMKM lulus uji [Nu Html Checker](https://validator.w3.org/nu/).
+  - **Sectioning Element:** Mengubah `<section>` dan `<article>` yang sekadar dipakai untuk membungkus konten tanpa *heading* menjadi `<div>`.
+  - **Atribut Datetime:** Memperbaiki atribut `datetime` pada elemen `<time>` yang mengandung format rentang tanggal tidak valid (misal: `2026-10-01/2026-10-14`) menjadi dua elemen `<time>` terpisah.
+  - **Nesting `<button>` & `<a>`:** Memperbaiki *error* `<button>` di dalam `<a>` dengan cara menggunakan `<button>` murni yang disisipi `onclick="window.location.href='...'"` agar semantik dan gaya UI tetap utuh namun terhindar dari error nesting.
+  - **Placeholder Select Required:** Menambahkan `<option value="" disabled>` sebagai awalan (*placeholder*) kosong pada setiap elemen `<select>` yang diberi atribut `required`, agar memenuhi standar validasi kriteria W3C.
+
+### Penjelasan Teknis & Alasan Perbaikan (Deep Dive)
+
+1. **Aturan Larangan Interactive Content Nesting (`<button>` dalam `<a>`)**
+   - Spesifikasi W3C melarang bersarangnya dua elemen interaktif (Interactive Content). Tag `<a>` adalah interaktif (membuka tautan), dan tag `<button>` juga interaktif (memicu aksi form/skrip).
+   - Bila disatukan, *browser* dan *screen reader* akan bingung menentukan *event* utama apa yang harus dieksekusi saat elemen tersebut diklik.
+   - **Solusi:** Kita mencopot tag `<a>` dan meletakkan fungsi navigasinya di dalam atribut *native* JS `<button onclick="window.location.href='...'">`. Ini menjaga tampilan murni sebuah tombol, sekaligus mematuhi spesifikasi HTML5 secara sah.
+
+2. **Parsing Mesin pada Atribut `<time>`**
+   - Tag `<time>` khusus dirancang agar waktu yang tertera bisa dipahami oleh mesin (*machine-readable*), misalnya algoritma Google, kalender, atau pengingat. 
+   - Nilai pada atribut `datetime` *wajib* mengikuti format standar kalender ISO (contoh: `2026-10-14`). W3C akan membuang format *range* waktu (`2026-10-01/2026-10-14`) karena mesin tidak menganggapnya sebagai "satu titik waktu" (Single Timestamp).
+   - **Solusi:** Dipecah menjadi dua buah tag `<time>` yang mengapit tanda hubung, sehingga mesin bisa menerjemahkannya sebagai waktu *start* dan waktu *end* secara eksplisit.
+
+3. **Logika Validasi `<select required>` HTML5**
+   - Peramban HTML5 memiliki fungsi validasi bawaan pada elemen *form*. Untuk tag *dropdown* `<select>`, jika diberi atribut `required` (wajib diisi), *browser* harus mengecek apakah pengguna "sudah memilih opsi valid" atau "belum memilih sama sekali".
+   - Jika baris pertama langsung berupa opsi valid (misal `value="BRI"`), maka *browser* menganggap *form* itu otomatis *Valid* tanpa interaksi pengguna, sehingga atribut `required` menjadi lumpuh (*useless*).
+   - **Solusi:** W3C mewajibkan elemen `<option>` paling pertama bertindak sebagai *placeholder* (punya `value=""` kosong) sehingga ketika form disubmit, peramban akan memblokir dan meminta *user* untuk memilih jika pilihan masih di *placeholder* tersebut.
+
+### Contoh Perbaikan Kode (UMKM)
+
+**1. Perbaikan Struktur Article/Section tanpa Heading**
+
+*Sebelum:*
+```html
+        <section>
+            <h2>Tips Operasional</h2>
+            <article>
+                <p><strong>Tips Kasir:</strong> Diskon 50% di atas pukul 19.30 WIB...</p>
+            </article>
+        </section>
+```
+
+*Sesudah (Article diganti Div agar valid di W3C):*
+```html
+        <section>
+            <h2>Tips Operasional</h2>
+            <div>
+                <p><strong>Tips Kasir:</strong> Diskon 50% di atas pukul 19.30 WIB...</p>
+            </div>
+        </section>
+```
+
+**2. Perbaikan Rentang Waktu (Atribut Datetime)**
+
+*Sebelum:*
+```html
+        <p>
+            <time datetime="2026-10-01/2026-10-14">1&ndash;14 Okt 2026</time>
+        </p>
+```
+
+*Sesudah (Dipecah agar valid):*
+```html
+        <p>
+            <time datetime="2026-10-01">1</time>&ndash;<time datetime="2026-10-14">14 Okt 2026</time>
+        </p>
+```
+
+**3. Perbaikan Elemen Button di dalam Anchor**
+
+*Sebelum:*
+```html
+        <p>
+            <a href="scan_qr_code.html"><button type="button">Batal</button></a>
+        </p>
+```
+
+*Sesudah (Menggunakan atribut onclick pada button):*
+```html
+        <p>
+            <button type="button" onclick="window.location.href='scan_qr_code.html'">Batal</button>
+        </p>
+```
+
+**4. Perbaikan Required Select Placeholder**
+
+*Sebelum:*
+```html
+        <select id="pilihan-bank" name="bank" required>
+            <option value="BRI" selected>BRI</option>
+            <option value="BCA">BCA</option>
+        </select>
+```
+
+*Sesudah (Menambahkan option kosong di awal):*
+```html
+        <select id="pilihan-bank" name="bank" required>
+            <option value="" disabled>-- Pilih Bank --</option>
+            <option value="BRI" selected>BRI</option>
+            <option value="BCA">BCA</option>
+        </select>
+```
