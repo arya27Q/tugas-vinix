@@ -46,7 +46,7 @@
 
         <form action="#" method="post">
 
-            <section>
+            <div>
                 <fieldset>
                     <legend>Informasi Toko</legend>
 
@@ -82,9 +82,9 @@
                             required>
                     </p>
                 </fieldset>
-            </section>
+            </div>
 
-            <section>
+            <div>
                 <fieldset>
                     <legend>Jam Operasional Surplus</legend>
 
@@ -111,15 +111,16 @@
                         </p>
                     </fieldset>
                 </fieldset>
-            </section>
+            </div>
 
-            <section>
+            <div>
                 <fieldset>
                     <legend>Pencairan Dana</legend>
 
                     <p>
                         <label for="pilihan-bank">Bank</label><br>
                         <select id="pilihan-bank" name="bank" required>
+                            <option value="" disabled>-- Pilih Bank --</option>
                             <option value="BRI" selected>BRI</option>
                             <option value="BCA">BCA</option>
                             <option value="Mandiri">Mandiri</option>
@@ -137,7 +138,7 @@
                         <input type="text" id="atas-nama" name="atas_nama" value="Danu Prasetyo" required>
                     </p>
                 </fieldset>
-            </section>
+            </div>
 
             <section>
                 <h2>Aksi</h2>
